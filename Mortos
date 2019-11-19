@@ -1,0 +1,57 @@
+list = []
+import sys, traceback
+
+for i in range(100):
+    print("            ======= MENU ======= ")
+    print("          || (1) Add Bookmark    ||")
+    print("          || (2) Edit Bookmark   ||")
+    print("          || (3) Delete Bookmark ||")
+    print("          || (4) View Bookmark   ||")
+    print("          || (5) Exit            ||")
+    print("            ==================== ")
+    choice = int(input("          Choice: "))
+    print(" ")
+    
+    if choice is 1:
+        print("ADD BOOKMARK")
+        number = int(input("Type in the number of bookmark that you want to add: "))
+        for x in range(number):
+            name = str(input("Name of bookmark: "))
+            list.append(name)
+        print(" ")
+        
+    elif choice is 2:
+        print("EDIT BOOKMARK")
+        name_of_bookmark = str(input("Please type in the name of the bookmark that you want to edit: "))
+        if name_of_bookmark in list:
+            y = list.index(name_of_bookmark)
+            edited = str(input("change to: "))
+            list[y] = edited
+            print(" ")
+        else:
+            print("The name of bookmark is not in the list!")
+            print(" ")
+            
+    elif choice is 3:
+        print("DELETE BOOKMARK")
+        name_of_bookmark = str(input("Please type in the name of the bookmark that you want to delete: "))
+        if name_of_bookmark in list:
+            z = list.index(name_of_bookmark)
+            list.pop(z)
+            print("Bookmark is succesfully deleted!")
+                
+        else:
+            print("The name of bookmark is not in the list!")
+        print(" ")
+            
+            
+    elif choice is 4:
+        print("VIEW BOOKMARK")
+        for t in range(len(list)):
+            print(list[t])
+        print(" ")
+            
+    elif choice is 5:
+        sys.exit(0)
+        
+            
